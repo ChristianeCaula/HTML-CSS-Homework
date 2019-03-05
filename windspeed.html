@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <!--below allows responsive columns-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Visualization Dashboard</title>
+  
+  <!--Bootstrap theme (used a template from bootswatch called Yeti)-->
+  <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+  <!--added to make the dropdown menu work-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  
+  <!--my stylesheet-->
+  <link rel="stylesheet" type="text/css" href = "style.css">
+</head>
+
+<body>
+  <!--Navbar
+  The website must, at the top of every page, have a navigation menu that:
+  * Has the name of the site on the left of the nav which allows users to return to the landing page from any page.-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="btn btn-secondary nav_bar_button" href="index.html"><strong><h3>Latitude</h3></strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarColor05">
+        <ul class="navbar-nav ml-auto">
+          <!--* Contains a dropdown on the right of the navbar named "Plots" which provides links to each individual visualization page.-->
+          <!--* Is responsive (using media queries). The nav must have similar behavior as the screenshots ["Navigation Menu" section](#navigation-menu) (notice the background color change).-->
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                <button type="button" class="btn btn-primary">Plots</button>
+                <div class="btn-group" role="group">
+                  <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                  <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; right: 0px; transform: translate3d(0px, 36px, 0px);">
+                    <a class="dropdown-item" href="temperature.html">Max Temperature</a>
+                    <a class="dropdown-item" href="humidity.html">Humidity</a>
+                    <a class="dropdown-item" href="cloudiness.html">Cloudiness</a>
+                    <a class="dropdown-item" href="winds.html">Wind Speed</a>
+                  </div>
+                </div>
+              </div>
+          </li>
+          <!--* Provides two more links on the right: "Comparisons" which links to the comparisons page, and "Data" which links to the data page.-->
+          <li class="nav-item">
+            <a class="nav-link" href="comparison.html">Comparison</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="data.html">Data</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+  <!--empty row-->  
+  <div><row class="col-md-12 box1"></row></div>
+
+  <!--boxes for headers-->
+  <div>
+    <div>
+      <div class="row">
+        <div class="col-md-1 box1"></div>
+        <div class="container container1 box col-md-6">
+          <h1>Latitude vs. Wind Speed</h1>
+          <div><img src = "Images/Fig4.png" alt ="City Latitude vs Wind Speed" style ="float:left; width:100%; height:100%">          
+            <p>Wind speeds may have some correlation with latitude.  The highest measurements were all taken in the cities above 40 degrees latitude.  Most of the cities in this dataset at the date of these measurements had wind speeds under five miles per hour regardless of latitude.</p>
+          </div>
+        </div>      
+        <div class="container container1 box col-md-4">
+          <h1>Visualizations</h1>
+          <a href ="temperature.html"><img class = "img" src = "Images/Fig1.png" alt ="City Latitude vs Max Temperature" style ="float:left; width:50%; height:25%"></a>
+          <a href ="humidity.html"><img class = "img" src="Images/Fig2.png" alt="City Latitude vs Humidity" style = "float:right; width:50%; height:25%"></a>
+          <a href ="cloudiness.html"><img class = "img" src = "Images/Fig3.png" alt ="City Latitude vs Cloudiness" style ="float:left; width:50%; height:25%"></a>
+          <a href ="winds.html"><img class = "img" src="Images/Fig2.png" alt="City Latitude vs Wind Speed" style = "float:right; width:50%; height:25%"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    
+</body>
+</html>
